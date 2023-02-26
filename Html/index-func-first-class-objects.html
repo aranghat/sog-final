@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+           /*
+                1. Store function in a 
+                2. Pass function as a parameter
+                3. Return function from another function
+                4. Store function in a data structure
+           */
+
+           var showMessage = function(message){
+                alert(message);
+           }
+
+           var showMessageInCondole = function(message){
+                console.log(message);
+           }
+           
+           function sayGreetings (func){
+                    func("Hello World");
+            }
+
+            //sayGreetings(showMessage);
+            //sayGreetings(showMessageInCondole);
+
+            var sayGoodMorning = function(){
+                alert("Good Morning");
+            }
+
+            var sayGoodAfternoon = function(){
+                alert("Good Afternoon");
+            }
+
+            var sayGoodEvening = function(){
+                alert("Good Evening");
+            }
+
+            function getGreetings()
+            {
+                var hour = new Date().getHours();
+                if(hour < 12)
+                    return sayGoodMorning;
+                else if(hour < 17)
+                    return sayGoodAfternoon;
+                else
+                    return sayGoodEvening;
+            }
+
+            var greetings = getGreetings();//returns a function
+            //greetings();
+
+            var arr =[sayGoodMorning, sayGoodAfternoon, sayGoodEvening];
+            for(var fun of arr)
+                fun();
+
+        </script>
+    </body>
+</html>

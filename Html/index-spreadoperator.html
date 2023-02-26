@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+
+        <script>
+
+           /* var employee = {
+                name : "Sreehari",
+                age : 35,
+                ctc : 150000,
+                getTaxPer : function() { return .01 },
+                getTaxAmount : function () { return this.ctc * this.getTaxPer(); }
+            };
+
+
+            var name = "Bill";
+            var age = 35;
+            var ctc = 350000;
+
+            getTaxPer = ()=> .01;
+            getTaxAmount = () => this.ctc * getTaxPer();
+
+            var employee2 = {name, age, ctc,getTaxPer,getTaxAmount};
+
+            console.debug(employee.name);
+            console.debug("Total Tax Per : " + employee.getTaxPer());
+            console.debug("Total Tax Amount : " + employee.getTaxAmount());
+
+            console.debug(employee2.name);
+            console.debug("Total Tax Per : " + employee2.getTaxPer());
+            console.debug("Total Tax Amount : " + employee2.getTaxAmount());
+
+            var dcSuperHeros = ['Batman','Aquaman','Wonder woman'];
+            var marvelHeros = ['Iron Man', 'Hulk', 'Thor'];
+
+            var allSuperHeros = [...dcSuperHeros, ...marvelHeros];
+            var updatedHeros = [...marvelHeros, 'Spiderman', 'Black Panther'];
+
+            var student = {name : "Sreehari", age : 35};
+            var admission = {...student, course : "B.Tech"};
+            var examination = {...student
+                               ,...admission, semester : 5};
+
+            var newHeros = [...dcSuperHeros, student];
+
+            console.debug(newHeros);
+            console.debug(allSuperHeros.join(","));
+            console.debug(updatedHeros.join(","));
+
+            console.debug(student);
+            console.debug(admission);
+
+            admission.name = "Bill G";
+            console.debug(student);
+            console.debug(admission);
+            console.debug(examination);*/
+
+            var name,age,ctc,reviews;
+            reviews = ["Review 1", "Review 2", "Review 3"];
+            [name,age,ctc,reviews]= ["Sreehari", 35, 150000,[...reviews,'Review 4', 'Review 5']];
+
+            console.debug(name);
+            console.debug(age);
+            console.debug(ctc);
+            console.debug(reviews.join(","));
+
+        </script>
+    </body>
+</html>

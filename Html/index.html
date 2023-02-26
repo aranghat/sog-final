@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            class ObjectCounter
+            {
+                 static counter = 0;
+                 static inc() {
+                    this.counter++;
+                    if(this.counter > 10)
+                        throw new Error("Max Objects REached");
+                 }
+            }
+
+            class Employee {
+                constructor(name,age){
+                    ObjectCounter.inc();
+                    this.name = name;
+                    this.age = age;
+                }
+                toString()
+                {
+                    return `Name : ${this.name} Age : ${this.age}`;
+                }    
+            }
+
+            class ProjectManager extends Employee {
+                #projectBonus = 50000; //Private Property
+                #totalExperience = 5;
+                constructor(name,age,projectName){
+                    super(name,age);
+                    this.projectName = projectName;
+                }
+
+                #calculateBonus()
+                {
+                    return this.#projectBonus * this.#totalExperience;
+                }
+
+                toString()
+                {
+                    return `${super.toString()}, Project Name : ${this.projectName}
+                             Project Bonus : ${this.#calculateBonus()}`;
+                }
+            }
+
+            var emp = new Employee('Sreehari',35);
+            var emp2 = new Employee('Bill',35);
+
+            let employees = [emp,emp2, new Employee('John',35)
+                                , new ProjectManager('Jane',35,'ABC')
+                                , new Employee('Jhon',35)
+                                , new ProjectManager('Jhon',35, 'XYZ'),
+                                new Employee('Jhon',35),
+                                new Employee('Jhon',35),
+                                new Employee('Jhon',35),
+                                new Employee('Jhon',35),
+                                new Employee('Jhon',35),
+                            ]
+            //console.debug(emp.toString());
+            //console.debug(emp2.toString());
+            for(var employee of employees)
+                console.debug(employee.toString());
+
+
+            
+        </script>
+    </body>
+</html>

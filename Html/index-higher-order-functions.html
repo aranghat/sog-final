@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div id="employees">
+            <div>
+                <h1>Sreehari</h1>
+                <h2>35</h2>
+                <hr/>
+            </div>
+        </div>
+        <script>
+            var arry = [1,2,3,5,6,7,8,9,10];
+            var employees = [{name:"Jhon Doe", age:25, ctc: 150000}
+                          , {name:"Jane Doe", age:32, ctc: 250000}
+                          , {name:"John Smith", age:40, ctc: 450000}
+                          , {name:"Jane Smith", age:28, ctc: 550000}];
+
+            /*var iseven = function(number){
+                return number % 2 == 0;
+            }
+
+            var isodd = function(number){
+                return number % 2 != 0;
+            }
+
+            var filterEmployees = function(employee){
+                return  employee.age >= 25 && employee.age <= 35;
+            }
+
+            var isPrime = function(number){
+                for(var i = 2; i < number; i++){
+                    if(number % i == 0)
+                        return false;
+                }
+                return true;
+            }
+
+            function filter(inputArray,logic){
+                var arr = [];
+                for(var i = 0; i < inputArray.length; i++){
+                    if(logic(inputArray[i]))
+                        arr.push(inputArray[i]);
+                }
+                return arr;
+            }
+
+           
+            
+
+            var evenNumebrs = filter(arry, iseven);
+            var oddNumbers = filter(arry, isodd);
+            var primeNumbers = filter(arry, isPrime);
+
+            console.log(evenNumebrs.join(","));
+            console.log(oddNumbers.join(","));
+
+            var filteredEmployees = filter(employees, filterEmployees);
+            for(var employee of filteredEmployees)
+                console.log(employee.name + " " + employee.age);
+
+            var incrementBy2 = function(number){
+                return number * 2;
+            }    
+            var increment = arry.map(incrementBy2);
+            
+            var toDivElement = function(emp){
+                return "<div><h1>" + emp.name + "</h1><h2>" + emp.age + "</h2><hr/></div>";
+            }
+            
+            //var empList = employees.map(toDivElement);
+            var empList = map(employees, toDivElement);
+            document.getElementById("employees").innerHTML = empList.join("");
+            
+
+            function map(array, logic){
+                var arr = [];
+                for(var i = 0; i < array.length; i++){
+                    arr.push(logic(array[i]));
+                }
+                return arr;
+            }*/
+
+
+            var addUpNumbers = function(total,number){
+                return total + number;
+            }
+
+            var totalSalariesPaid = function(total, employee){
+                return total + employee.ctc;
+            }
+
+            //var sum = arry.reduce(addUpNumbers);
+            //console.log(sum);
+
+            function reduce(arry, logic){
+                var total = 0;
+                for(var i = 0; i < array.length; i++){
+                    total = logic(total, array[i]);
+                }
+                return total;
+            }
+
+           // var sum = reduce(arry, addUpNumbers);
+           // console.log(sum);
+
+           var totalAnnualSalary = reduce(employees, totalSalariesPaid);
+              console.log(totalAnnualSalary);
+        </script>
+    </body>
+</html>

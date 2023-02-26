@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <body>
+            <div id="placeholder"></div>
+            <button type="button" 
+                    onclick="(() => document.getElementById('placeholder').innerHTML = 'Hello World')()">
+            Click Me</button>
+
+            <select onchange="(() => console.debug(this.value))()">
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <script>
+                /*function sayHello(message){
+                    alert(message);
+                }
+
+                function askUserName(){
+                    var name = prompt("Enter your name");
+                    return name;
+                }
+
+                sayHello = (message) => alert(message);
+                askUserName = () => prompt("Enter your name");
+
+                let user = askUserName();
+                sayHello("Hello " + user);*/
+
+                function sayHello(message,abcd){
+                    abcd(message);
+                }
+                /*function renderInAlert(message){
+                    alert(message);
+                }
+
+                function renderInConsole(message){
+                    console.log(message);
+                }
+
+                function renderInDocument(message){
+                    document.write(message);
+                }*/
+
+                renderASHeading = (message) => {
+
+                    var heading = document.createElement("h1");
+                    heading.innerHTML = message;
+                    document.getElementById("placeholder").appendChild(heading);
+
+                }
+                
+                //sayHello("Hello World", (message) => alert(message));
+                //sayHello("Hello Univerise",renderASHeading);
+            </script>
+        </body>
+    </head>
+</html>
